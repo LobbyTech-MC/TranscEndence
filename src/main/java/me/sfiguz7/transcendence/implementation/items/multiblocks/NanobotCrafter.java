@@ -116,7 +116,7 @@ public class NanobotCrafter extends io.github.thebusybiscuit.slimefun4.core.mult
     }
 
     protected Inventory createVirtualInventory(Inventory inv) {
-        Inventory fakeInv = Bukkit.createInventory(null, 9, "Fake Inventory");
+        Inventory fakeInv = Bukkit.createInventory(null, 9, "假库存");
 
         for (int j = 0; j < inv.getContents().length; j++) {
             ItemStack stack = inv.getContents()[j] != null && inv.getContents()[j].getAmount() > 1 ?
