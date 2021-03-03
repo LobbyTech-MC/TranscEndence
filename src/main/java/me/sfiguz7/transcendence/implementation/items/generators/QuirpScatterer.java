@@ -35,7 +35,7 @@ public class QuirpScatterer extends AGenerator implements EnergyNetProvider {
 
     @Override
     public String getInventoryTitle() {
-        return "&cQuirp Scatterer";
+        return "&c孤立元素散射器";
     }
 
     @Override
