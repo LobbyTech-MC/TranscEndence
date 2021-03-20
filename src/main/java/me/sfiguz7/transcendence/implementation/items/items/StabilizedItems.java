@@ -22,11 +22,11 @@ public class StabilizedItems extends SlimefunItem {
             TERecipeType.STABILIZER
         ),
         BLOCK(TEItems.STABLE_BLOCK,
-            new ItemStack[] {TEItems.STABLE_INGOT, TEItems.STABLE_INGOT, TEItems.STABLE_INGOT,
-                TEItems.STABLE_INGOT, TEItems.STABLE_INGOT, TEItems.STABLE_INGOT,
-                TEItems.STABLE_INGOT, TEItems.STABLE_INGOT, TEItems.STABLE_INGOT
-            },
-            TERecipeType.NANOBOT_CRAFTER
+                new ItemStack[]{TEItems.STABLE_INGOT, TEItems.STABLE_INGOT, TEItems.STABLE_INGOT,
+                        TEItems.STABLE_INGOT, TEItems.PURE_NETHER_ESSENCE, TEItems.STABLE_INGOT,
+                        TEItems.STABLE_INGOT, TEItems.STABLE_INGOT, TEItems.STABLE_INGOT
+                },
+                TERecipeType.NANOBOT_CRAFTER
         );
 
         private final SlimefunItemStack slimefunItem;

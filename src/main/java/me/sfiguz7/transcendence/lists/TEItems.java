@@ -240,6 +240,20 @@ public final class TEItems {
             LoreBuilder.powerBuffer(1024),
             LoreBuilder.powerPerSecond(512)
     );
-    private TEItems() {
-    }
+
+    public static final SlimefunItemStack NETHER_ESSENCE = new SlimefunItemStack("NETHER_ESSENCE",
+        Material.WHITE_DYE,
+        "&b下界精华",
+        "&9星尘?"
+    );
+    public static final SlimefunItemStack CONDENSED_NETHER_ESSENCE = new SlimefunItemStack("CONDENSED_NETHER_ESSENCE",
+        Material.BONE_MEAL,
+        "&b浓缩下界精华",
+        "&9难得的物品"
+    );
+    public static final SlimefunItemStack PURE_NETHER_ESSENCE = new SlimefunItemStack("PURE_NETHER_ESSENCE",
+        Material.SNOWBALL,
+        "&3精纯下界精华",
+        "&充满能量"
+    );
 }
