@@ -3,6 +3,7 @@ package me.sfiguz7.transcendence.implementation.tasks;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.sfiguz7.transcendence.TranscEndence;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -15,7 +16,7 @@ public class StableTask implements Runnable {
     @Override
     public void run() {
         for (Player p : Bukkit.getOnlinePlayers()) {
-            if (p.isValid() && !p.isDead()) {
+            if (p.isValid() && !p.isDead() && p.getGameMode().equals(GameMode.SURVIVAL)) {
                 checkForInstability(p);
             }
         }

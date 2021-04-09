@@ -2,6 +2,8 @@ package me.sfiguz7.transcendence;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
+import me.mrCookieSlime.Slimefun.Lists.RecipeType;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.mrCookieSlime.Slimefun.cscorelib2.updater.GitHubBuildsUpdater;
 import me.sfiguz7.transcendence.implementation.core.attributes.TERegistry;
@@ -33,7 +35,7 @@ import me.sfiguz7.transcendence.lists.TEItems;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -206,32 +208,11 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         new ZotOverloader().register(this);
 
         new Research(new NamespacedKey(this, "zot_overloader"),
-                        ++researchId, "Zot Overloader", 35)
-                .addItems(TEItems.ZOT_OVERLOADER).register();
+            ++researchId, "永久药水", 35)
+            .addItems(TEItems.ZOT_OVERLOADER).register();
 
-        /* Extra stuff for SkyFactory*/
-
-        // Enchantment registration
-        try {
-            if (!Enchantment.isAcceptingRegistrations()) {
-                Field accepting = Enchantment.class.getDeclaredField("acceptingNew");
-                accepting.setAccessible(true);
-                accepting.set(null, true);
-            }
-        } catch (IllegalAccessException | NoSuchFieldException ignored) {
-            getLogger().warning("Failed to register enchantment. Seems the 'acceptingNew' field changed");
-        }
-        Enchantment.registerEnchantment(new ShinyEnchantment(Constants.SHINY_ENCHANTMENT));
-
-        for (NetherEssences.Type type : NetherEssences.Type.values()) {
-            new NetherEssences(type).register(this);
-        }
-
-        new Research(new NamespacedKey(this, "essences"),
-            ++researchId, "Essences", 30)
-            .addItems(TEItems.NETHER_ESSENCE,
-                TEItems.CONDENSED_NETHER_ESSENCE,
-                TEItems.PURE_NETHER_ESSENCE).register();
+        new SlimefunItem(TEItems.transcendence, TEItems.TE_INFO, RecipeType.NULL, new ItemStack[0]
+        ).register(this);
     }
 
     @Override
