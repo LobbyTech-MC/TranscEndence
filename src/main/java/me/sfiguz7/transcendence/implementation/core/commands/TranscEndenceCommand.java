@@ -27,6 +27,7 @@ public class TranscEndenceCommand implements CommandExecutor {
         } else {
             sendHelp(sender);
         }
+		return false;
     }
 
     public void sendHelp(CommandSender sender) {
