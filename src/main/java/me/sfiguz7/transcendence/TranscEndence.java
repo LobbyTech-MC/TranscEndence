@@ -26,11 +26,13 @@ import me.sfiguz7.transcendence.implementation.items.machines.ZotOverloader;
 import me.sfiguz7.transcendence.implementation.items.multiblocks.NanobotCrafter;
 import me.sfiguz7.transcendence.implementation.listeners.DaxiAnimationArmorStandHeadListener;
 import me.sfiguz7.transcendence.implementation.listeners.DaxiDeathListener;
-import me.sfiguz7.transcendence.implementation.listeners.DaxiMilkListener;
+import me.sfiguz7.transcendence.implementation.listeners.DaxiEffectModificationListener;
 import me.sfiguz7.transcendence.implementation.listeners.TranscEndenceGuideListener;
+import me.sfiguz7.transcendence.implementation.listeners.UnstableIngotDropListener;
 import me.sfiguz7.transcendence.implementation.listeners.UnstableListener;
+import me.sfiguz7.transcendence.implementation.tasks.RecurrentRefreshTask;
 import me.sfiguz7.transcendence.implementation.tasks.StableTask;
-import me.sfiguz7.transcendence.lists.Constants;
+import me.sfiguz7.transcendence.implementation.utils.SaveUtils;
 import me.sfiguz7.transcendence.lists.TEItems;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
@@ -74,8 +76,9 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         // Listeners
         new UnstableListener(this);
         new DaxiDeathListener(this);
-        new DaxiMilkListener(this);
+        new DaxiEffectModificationListener(this);
         new DaxiAnimationArmorStandHeadListener(this);
+        new UnstableIngotDropListener(this);
         new TranscEndenceGuideListener(cfg.getBoolean("options.give-guide-on-first-join"));
 
         // Instability Update Task
@@ -87,6 +90,13 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
                 cfg.getInt("options.instability-update-interval") * 20L
             );
         }
+        // Recurrent refresh task (only really needed for absorption)
+        getServer().getScheduler().runTaskTimerAsynchronously(
+            this,
+            new RecurrentRefreshTask(),
+            0L,
+            15 * 20L
+        );
 
         // Config fetching
         highchance = getConfig().getInt("options.polarizer-affinity-chance");
@@ -213,13 +223,17 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
 
         new SlimefunItem(TEItems.transcendence, TEItems.TE_INFO, RecipeType.NULL, new ItemStack[0]
         ).register(this);
+
+
+        // Initialise data if it exists
+        SaveUtils.readData();
     }
 
     @Override
     public void onDisable() {
-        instance = null;
-
         Bukkit.getScheduler().cancelTasks(this);
+        SaveUtils.writeData();
+        instance = null;
     }
 
     @Override

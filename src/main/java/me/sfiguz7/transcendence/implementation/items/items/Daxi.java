@@ -232,5 +232,11 @@ public class Daxi extends SlimefunItem {
             this.amplifier = level - 1;
             this.message = message;
         }
+
+        public int getTypeEffectAmplifier() {
+            return this.amplifier;
+        }
+
+        public static final Daxi.Type[] values = values();
     }
 }
