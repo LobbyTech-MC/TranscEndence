@@ -268,6 +268,6 @@ public final class TEItems {
     public static final SlimefunItemStack PURE_NETHER_ESSENCE = new SlimefunItemStack("PURE_NETHER_ESSENCE",
         Material.SNOWBALL,
         "&3精纯下界精华",
-        "&充满能量"
+        "&9充满能量"
     );
 }

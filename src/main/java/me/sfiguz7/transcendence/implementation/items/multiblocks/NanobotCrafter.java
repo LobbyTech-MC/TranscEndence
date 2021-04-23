@@ -1,12 +1,9 @@
 package me.sfiguz7.transcendence.implementation.items.multiblocks;
 
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.api.Slimefun;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-import me.sfiguz7.transcendence.TranscEndence;
-import me.sfiguz7.transcendence.lists.TEItems;
+import static me.sfiguz7.transcendence.lists.TEItems.NANOBOT_CRAFTER;
+
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Material;
@@ -18,9 +15,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.List;
-
-import static me.sfiguz7.transcendence.lists.TEItems.NANOBOT_CRAFTER;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import me.mrCookieSlime.Slimefun.Lists.RecipeType;
+import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import me.sfiguz7.transcendence.TranscEndence;
+import me.sfiguz7.transcendence.lists.TEItems;
 
 public class NanobotCrafter extends io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine {
 

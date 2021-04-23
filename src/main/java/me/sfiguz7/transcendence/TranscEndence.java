@@ -1,5 +1,14 @@
 package me.sfiguz7.transcendence;
 
+import java.io.File;
+import java.util.logging.Level;
+
+import org.bstats.bukkit.Metrics;
+import org.bukkit.Bukkit;
+import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
+
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -8,10 +17,8 @@ import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.mrCookieSlime.Slimefun.cscorelib2.updater.GitHubBuildsUpdater;
 import me.sfiguz7.transcendence.implementation.core.attributes.TERegistry;
 import me.sfiguz7.transcendence.implementation.core.commands.TranscEndenceCommand;
-import me.sfiguz7.transcendence.implementation.enchantments.ShinyEnchantment;
 import me.sfiguz7.transcendence.implementation.items.generators.QuirpScatterer;
 import me.sfiguz7.transcendence.implementation.items.items.Daxi;
-import me.sfiguz7.transcendence.implementation.items.items.NetherEssences;
 import me.sfiguz7.transcendence.implementation.items.items.Polarizer;
 import me.sfiguz7.transcendence.implementation.items.items.Quirps;
 import me.sfiguz7.transcendence.implementation.items.items.StabilizedItems;
@@ -34,15 +41,6 @@ import me.sfiguz7.transcendence.implementation.tasks.RecurrentRefreshTask;
 import me.sfiguz7.transcendence.implementation.tasks.StableTask;
 import me.sfiguz7.transcendence.implementation.utils.SaveUtils;
 import me.sfiguz7.transcendence.lists.TEItems;
-import org.bstats.bukkit.Metrics;
-import org.bukkit.Bukkit;
-import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
-
-import java.io.File;
-import java.lang.reflect.Field;
-import java.util.logging.Level;
 
 public class TranscEndence extends JavaPlugin implements SlimefunAddon {
 
