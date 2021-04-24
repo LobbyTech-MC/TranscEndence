@@ -1,14 +1,5 @@
 package me.sfiguz7.transcendence;
 
-import java.io.File;
-import java.util.logging.Level;
-
-import org.bstats.bukkit.Metrics;
-import org.bukkit.Bukkit;
-import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
-
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -41,6 +32,14 @@ import me.sfiguz7.transcendence.implementation.tasks.RecurrentRefreshTask;
 import me.sfiguz7.transcendence.implementation.tasks.StableTask;
 import me.sfiguz7.transcendence.implementation.utils.SaveUtils;
 import me.sfiguz7.transcendence.lists.TEItems;
+import org.bstats.bukkit.Metrics;
+import org.bukkit.Bukkit;
+import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.File;
+import java.util.logging.Level;
 
 public class TranscEndence extends JavaPlugin implements SlimefunAddon {
 
@@ -216,7 +215,7 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         new ZotOverloader().register(this);
 
         new Research(new NamespacedKey(this, "zot_overloader"),
-            ++researchId, "永久药水", 35)
+            ++researchId, "Zot Overloader", 35)
             .addItems(TEItems.ZOT_OVERLOADER).register();
 
         new SlimefunItem(TEItems.transcendence, TEItems.TE_INFO, RecipeType.NULL, new ItemStack[0]

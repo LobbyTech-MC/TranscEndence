@@ -17,13 +17,11 @@ public final class TEItems {
     // Credits to @NCBPFluffy for the idea, people appreciate it so adding to this too
     public static final SlimefunItemStack TE_INFO = new SlimefunItemStack("TE_INFO",
         Material.WRITTEN_BOOK,
-        "&5TranscEndence Info",
+        "&5进阶模组信息",
         "",
         "&e" + TranscEndence.getInstance().getName() + " " + TranscEndence.getInstance().getPluginVersion(),
         "",
-        "&e/te guide &7to get a quick guide",
-        "&e/te walkthrough &7to get the in depth",
-        "&7guide/walkthrough link"
+        "&e/te guide &7获得进阶模组指南"
     );
 
 
