@@ -26,7 +26,7 @@ public class TranscEndenceCommand implements CommandExecutor {
                 Player p = (Player) sender;
                 p.getInventory().addItem(TranscEndenceGuideListener.getGuide());
             } else if (args[0].equalsIgnoreCase("walkthrough")) {
-                sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.GRAY +
+                sender.sendMessage(ChatColor.LIGHT_PURPLE + "进阶模组 > " + ChatColor.GRAY +
                     "https://github.com/Sfiguz7/TranscEndence/wiki/Walkthrough-guide-thingy");
             } else {
                 sendHelp(sender);
@@ -44,19 +44,19 @@ public class TranscEndenceCommand implements CommandExecutor {
                                 message.append(" ").append(t);
                             }
                             Bukkit.getScheduler().runTask(TranscEndence.getInstance(), () -> Daxi.reapplyEffects(p));
-                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
+                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "进阶模组 > " + ChatColor.RED +
                                 message);
 
                         } else {
-                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
+                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "进阶模组 > " + ChatColor.RED +
                                 "The chosen player has no active Daxi!");
                         }
                     } else {
-                        sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED + "The chosen " +
+                        sender.sendMessage(ChatColor.LIGHT_PURPLE + "进阶模组 > " + ChatColor.RED + "The chosen " +
                             "player does not exist!");
                     }
                 } else {
-                    sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
+                    sender.sendMessage(ChatColor.LIGHT_PURPLE + "进阶模组 > " + ChatColor.RED +
                         "Insufficient permissions!");
                 }
             } else if (args[0].equalsIgnoreCase("toggle")) {
@@ -68,34 +68,34 @@ public class TranscEndenceCommand implements CommandExecutor {
                         if (toggledPlayers.contains(uuid)) {
                             toggledPlayers.remove(uuid);
                             Bukkit.getScheduler().runTask(TranscEndence.getInstance(), () -> Daxi.reapplyEffects(p));
-                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
+                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "进阶模组 > " + ChatColor.RED +
                                 "Effects refreshing toggled ON for " + p.getDisplayName());
                         } else {
                             toggledPlayers.add(uuid);
-                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
+                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "进阶模组 > " + ChatColor.RED +
                                 "Effects refreshing toggled OFF for " + p.getDisplayName());
                         }
                     } else {
-                        sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED + "The chosen " +
+                        sender.sendMessage(ChatColor.LIGHT_PURPLE + "进阶模组 > " + ChatColor.RED + "The chosen " +
                             "player does not exist!");
                     }
                 } else {
-                    sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
+                    sender.sendMessage(ChatColor.LIGHT_PURPLE + "进阶模组 > " + ChatColor.RED +
                         "Insufficient permissions!");
                 }
             }
         } else {
             sendHelp(sender);
         }
-        return true;
+		return false;
     }
 
     public void sendHelp(CommandSender sender) {
         sender.sendMessage("");
-        sender.sendMessage(ChatColors.color("&aTranscEndence &2v" + TranscEndence.getVersion()));
+        sender.sendMessage(ChatColors.color("&a进阶模组 &2v" + TranscEndence.getVersion()));
 
-        sender.sendMessage(ChatColors.color("&3/te guide &b") + "Gives a TranscEndence Guide");
-        sender.sendMessage(ChatColors.color("&3/te walkthrough &b") + "Gives a Walkthrough link");
+        sender.sendMessage(ChatColors.color("&3/te guide &b") + "获取一个进阶模组指南");
+        sender.sendMessage(ChatColors.color("&3/te walkthrough &b") + "获取帮助链接");
         if (sender.hasPermission("te.command.reapply")) {
             sender.sendMessage(ChatColors.color("&3/te reapply <name> &b") + "Reapplies Daxi effects to <name>");
         }

@@ -8,10 +8,8 @@ import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.mrCookieSlime.Slimefun.cscorelib2.updater.GitHubBuildsUpdater;
 import me.sfiguz7.transcendence.implementation.core.attributes.TERegistry;
 import me.sfiguz7.transcendence.implementation.core.commands.TranscEndenceCommand;
-import me.sfiguz7.transcendence.implementation.enchantments.ShinyEnchantment;
 import me.sfiguz7.transcendence.implementation.items.generators.QuirpScatterer;
 import me.sfiguz7.transcendence.implementation.items.items.Daxi;
-import me.sfiguz7.transcendence.implementation.items.items.NetherEssences;
 import me.sfiguz7.transcendence.implementation.items.items.Polarizer;
 import me.sfiguz7.transcendence.implementation.items.items.Quirps;
 import me.sfiguz7.transcendence.implementation.items.items.StabilizedItems;
@@ -32,18 +30,15 @@ import me.sfiguz7.transcendence.implementation.listeners.UnstableIngotDropListen
 import me.sfiguz7.transcendence.implementation.listeners.UnstableListener;
 import me.sfiguz7.transcendence.implementation.tasks.RecurrentRefreshTask;
 import me.sfiguz7.transcendence.implementation.tasks.StableTask;
-import me.sfiguz7.transcendence.lists.Constants;
 import me.sfiguz7.transcendence.implementation.utils.SaveUtils;
 import me.sfiguz7.transcendence.lists.TEItems;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
-import java.lang.reflect.Field;
 import java.util.logging.Level;
 
 public class TranscEndence extends JavaPlugin implements SlimefunAddon {
@@ -226,32 +221,8 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         new ZotOverloader().register(this);
 
         new Research(new NamespacedKey(this, "zot_overloader"),
-                        ++researchId, "Zot Overloader", 35)
-                .addItems(TEItems.ZOT_OVERLOADER).register();
-
-        /* Extra stuff for SkyFactory*/
-
-        // Enchantment registration
-        try {
-            if (!Enchantment.isAcceptingRegistrations()) {
-                Field accepting = Enchantment.class.getDeclaredField("acceptingNew");
-                accepting.setAccessible(true);
-                accepting.set(null, true);
-            }
-        } catch (IllegalAccessException | NoSuchFieldException ignored) {
-            getLogger().warning("Failed to register enchantment. Seems the 'acceptingNew' field changed");
-        }
-        Enchantment.registerEnchantment(new ShinyEnchantment(Constants.SHINY_ENCHANTMENT));
-
-        for (NetherEssences.Type type : NetherEssences.Type.values()) {
-            new NetherEssences(type).register(this);
-        }
-
-        new Research(new NamespacedKey(this, "essences"),
-            ++researchId, "Essences", 30)
-            .addItems(TEItems.NETHER_ESSENCE,
-                TEItems.CONDENSED_NETHER_ESSENCE,
-                TEItems.PURE_NETHER_ESSENCE).register();
+            ++researchId, "Zot Overloader", 35)
+            .addItems(TEItems.ZOT_OVERLOADER).register();
 
         new SlimefunItem(TEItems.transcendence, TEItems.TE_INFO, RecipeType.NULL, new ItemStack[0]
         ).register(this);
