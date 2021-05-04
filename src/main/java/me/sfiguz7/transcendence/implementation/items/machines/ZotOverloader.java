@@ -158,7 +158,7 @@ public class ZotOverloader extends SimpleSlimefunItem<BlockTicker> implements TE
                     int j = 0;
                     for (int i : getInputSlots()) {
                         input[j] = menu.getItemInSlot(i);
-                        if (input[j] == null) {
+                        if (input[j] == null || j > 3) {
                             j++;
                             continue;
                         }
