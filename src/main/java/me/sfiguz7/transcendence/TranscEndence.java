@@ -212,12 +212,6 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
                 TEItems.QUIRP_CYCLER,
                 TEItems.STABILIZER).register();
 
-        new Research(new NamespacedKey(this, "nether_essence"),
-                ++researchId, "下界精华", 40)
-                .addItems(TEItems.NETHER_ESSENCE,
-                    TEItems.CONDENSED_NETHER_ESSENCE,
-                    TEItems.PURE_NETHER_ESSENCE).register();
-        
         new ZotOverloader().register(this);
 
         new Research(new NamespacedKey(this, "zot_overloader"),

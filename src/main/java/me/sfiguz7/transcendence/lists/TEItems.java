@@ -268,4 +268,6 @@ public final class TEItems {
         "&3精纯下界精华",
         "&9充满能量"
     );
+    private TEItems() {
+    }
 }
