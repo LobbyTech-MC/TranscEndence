@@ -17,12 +17,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-import me.sfiguz7.transcendence.TranscEndence;
-import me.sfiguz7.transcendence.lists.TEItems;
+import java.util.List;
+
+import static me.sfiguz7.transcendence.lists.TEItems.NANOBOT_CRAFTER;
 
 public class NanobotCrafter extends io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine {
 
@@ -130,4 +127,3 @@ public class NanobotCrafter extends io.github.thebusybiscuit.slimefun4.core.mult
         return fakeInv;
     }
 }
-
