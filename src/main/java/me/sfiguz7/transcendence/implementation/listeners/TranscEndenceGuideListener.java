@@ -33,33 +33,33 @@ public class TranscEndenceGuideListener implements Listener {
         List<String> pages = new ArrayList<>();
         ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
         BookMeta meta = (BookMeta) book.getItemMeta();
-        meta.setTitle("TranscEndence Guide");
-        meta.setAuthor("Sfiguz7");
+        meta.setTitle("末地科技指南书");
+        meta.setAuthor("作者:Sfiguz7 汉化:baoad");
         //Page 3 has an extra space after "Polarizer" otherwise "in" gets cut
-        pages.add(ChatColors.color("Hello! This is a quick guide on how TranscEndence works.\n\n" +
-            "&aQuirps &rare the main resource and can only be obtained by using a &9Quirp Oscillator " +
-            "&r(which only works in the end!)."));
-        pages.add(ChatColors.color("You'll get 4 different quirps based on their &9spin: &rup, down, left, " +
-            "right.\n\n" +
-            "You can force the Quirps Oscillator to spawn more Quirps of vertical or horizontal spin" +
-            " by using the respective &dPolarizer  &rin the purple slot."));
-        pages.add(ChatColors.color("&4Unstable ingots &rare the basic material to craft all end game items:" +
-            " be careful, they will &ckill &ryou and disappear if you hold them for more than a few instants.\n\n" +
-            "It is recommended you use cargo to move them instead."));
-        pages.add(ChatColors.color("&aZots &rcan only be filled using a Zot Overloader, where Quirps are" +
-            " consumed to charge the Zots.\n\n" +
-            "The ratio is 1:1 for quirps with the same spin as the zot, 16:1 if they have different spin."));
-        pages.add(ChatColors.color("&aDaxis &rare the end goal of this journey: each type will give you a" +
-            " different potion effect which will last until you die.\n" +
-            "These are respectively:\n" +
-            "(S) - Strength 3\n" +
-            "(A) - Absorption 5\n" +
-            "(F) - Resistance 4\n" +
-            "(H) - Saturation\n" +
-            "(R) - Regeneration 2\n"));
-        pages.add(ChatColors.color("On death you drop 8 Stable Blocks for each effect you had meaning you only need 1" +
-            " extra nether star" +
-            " each to craft the Daxi once again"));
+        pages.add(ChatColors.color("你好!这是关于末地科技的指南.\n\n" +
+            "&a粒子&r是主要的物品,想要获取只能通过&9粒子生产机" +
+            "&r(只能在末地使用!)."));
+        pages.add(ChatColors.color("从粒子生产机那你会得到4种不同的粒子&9如: &rup, down水平粒子, left, " +
+            "right垂直粒子.\n\n" +
+            "你可以让粒子生产机产生水平粒子和垂直粒子." +
+            "通过两种不同的&d偏振器&r来生产对应的粒子几率."));
+        pages.add(ChatColors.color("&4不稳定的锭和其他材料:" +
+            "小心点,如果拿住他超过了一定时间,那么他会&c杀了&r你,物品并且会永远的消失.\n\n" +
+            "建议你用货运来运输."));
+        pages.add(ChatColors.color("&a粒子过载机&r在里面放入未充能的粒子" +
+            "用来给粒子充能.\n\n" +
+            "粒子过载机方向相同的离子的比率是1:1如果它们的方向不同，比率则是16:1."));
+        pages.add(ChatColors.color("&a超能力核心&r是末地科技的目标:他会给你不同的" +
+            "药剂效果,持续到你死亡.\n" +
+            "效果列表图:\n" +
+            "(S) - 力量 3\n" +
+            "(A) - 伤害吸收 5\n" +
+            "(F) - 抗性提升 4\n" +
+            "(H) - 饱和\n" +
+            "(R) - 生命恢复 2\n"));
+        pages.add(ChatColors.color("死亡的时候,所有的超能力效果将会消失." +
+            "这意味着只能从头开始." +
+            "只能重新制作超能力核心."));
         meta.setPages(pages);
         book.setItemMeta(meta);
         return book;
