@@ -39,8 +39,8 @@ public class TranscEndenceGuideListener implements Listener {
         pages.add(ChatColors.color("你好!这是关于末地科技的指南.\n\n" +
             "&a粒子&r是主要的物品,想要获取只能通过&9粒子生产机" +
             "&r(只能在末地使用!)."));
-        pages.add(ChatColors.color("从粒子生产机那你会得到4种不同的粒子&9如: &rup, down水平粒子, left, " +
-            "right垂直粒子.\n\n" +
+        pages.add(ChatColors.color("从粒子生产机那你会得到4种不同的粒子&9包括: &r上、下 垂直粒子, " +
+            "左、右 水平粒子.\n\n" +
             "你可以让粒子生产机产生水平粒子和垂直粒子." +
             "通过两种不同的&d偏振器&r来生产对应的粒子几率."));
         pages.add(ChatColors.color("&4不稳定的锭和其他材料:" +

@@ -26,14 +26,14 @@ public class TranscEndenceCommand implements CommandExecutor {
                 Player p = (Player) sender;
                 p.getInventory().addItem(TranscEndenceGuideListener.getGuide());
             } else if (args[0].equalsIgnoreCase("walkthrough")) {
-                sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.GRAY +
+                sender.sendMessage(ChatColor.LIGHT_PURPLE + "末地科技 > " + ChatColor.GRAY +
                     "https://github.com/Sfiguz7/TranscEndence/wiki/Walkthrough-guide-thingy");
             } else if (args[0].equalsIgnoreCase("list")) {
                 Set<UUID> uuids =
                         TranscEndence.getRegistry().getDaxiEffectPlayers().keySet();
                 StringBuilder list = new StringBuilder().append(ChatColor.LIGHT_PURPLE);
                 if (uuids.isEmpty()) {
-                    list.append("There are no players with Daxis!");
+                    list.append("没有玩家拥有超级药水效果!");
                 } else {
                     for (UUID uuid : uuids) {
                         list.append(Bukkit.getOfflinePlayer(uuid).getName()).append(' ');
@@ -51,25 +51,25 @@ public class TranscEndenceCommand implements CommandExecutor {
                         Set<Daxi.Type> effects =
                             TranscEndence.getRegistry().getDaxiEffectPlayers().get(p.getUniqueId());
                         if (effects != null) {
-                            StringBuilder message = new StringBuilder("Reapplied: ");
+                            StringBuilder message = new StringBuilder("刷新超级药水: ");
                             for (Daxi.Type t : effects) {
                                 message.append(" ").append(t);
                             }
                             Bukkit.getScheduler().runTask(TranscEndence.getInstance(), () -> Daxi.reapplyEffects(p));
-                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
+                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "末地科技 > " + ChatColor.RED +
                                 message);
 
                         } else {
-                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
-                                "The chosen player has no active Daxi!");
+                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "末地科技 > " + ChatColor.RED +
+                                "该玩家没有超级药水效果!");
                         }
                     } else {
-                        sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED + "The chosen " +
-                            "player does not exist!");
+                        sender.sendMessage(ChatColor.LIGHT_PURPLE + "末地科技 > " + ChatColor.RED +
+                            "该玩家不存在!");
                     }
                 } else {
-                    sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
-                        "Insufficient permissions!");
+                    sender.sendMessage(ChatColor.LIGHT_PURPLE + "末地科技 > " + ChatColor.RED +
+                        "权限不足!");
                 }
             } else if (args[0].equalsIgnoreCase("toggle")) {
                 if (sender.hasPermission("te.command.toggle")) {
@@ -80,20 +80,20 @@ public class TranscEndenceCommand implements CommandExecutor {
                         if (toggledPlayers.contains(uuid)) {
                             toggledPlayers.remove(uuid);
                             Bukkit.getScheduler().runTask(TranscEndence.getInstance(), () -> Daxi.reapplyEffects(p));
-                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
-                                "Effects refreshing toggled ON for " + p.getDisplayName());
+                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "末地科技 > " + ChatColor.RED +
+                                "已为" + p.getDisplayName() + "打开超级药水刷新功能");
                         } else {
                             toggledPlayers.add(uuid);
-                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
-                                "Effects refreshing toggled OFF for " + p.getDisplayName());
+                            sender.sendMessage(ChatColor.LIGHT_PURPLE + "末地科技 > " + ChatColor.RED +
+                            		"已为" + p.getDisplayName() + "关闭超级药水刷新功能");
                         }
                     } else {
-                        sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED + "The chosen " +
-                            "player does not exist!");
+                        sender.sendMessage(ChatColor.LIGHT_PURPLE + "末地科技 > " + ChatColor.RED +
+                            "该玩家不存在!");
                     }
                 } else {
-                    sender.sendMessage(ChatColor.LIGHT_PURPLE + "TranscEndence > " + ChatColor.RED +
-                        "Insufficient permissions!");
+                    sender.sendMessage(ChatColor.LIGHT_PURPLE + "末地科技 > " + ChatColor.RED +
+                        "没有权限!");
                 }
             }
         } else {
@@ -104,15 +104,15 @@ public class TranscEndenceCommand implements CommandExecutor {
 
     public void sendHelp(CommandSender sender) {
         sender.sendMessage("");
-        sender.sendMessage(ChatColors.color("&aTranscEndence &2v" + TranscEndence.getVersion()));
+        sender.sendMessage(ChatColors.color("&a末地科技 &2v" + TranscEndence.getVersion()));
 
-        sender.sendMessage(ChatColors.color("&3/te guide &b") + "Gives a TranscEndence Guide");
-        sender.sendMessage(ChatColors.color("&3/te walkthrough &b") + "Gives a Walkthrough link");
+        sender.sendMessage(ChatColors.color("&3/te guide &b") + "获取末地科技指南书");
+        sender.sendMessage(ChatColors.color("&3/te walkthrough &b") + "获取末地科技帮助链接");
         if (sender.hasPermission("te.command.reapply")) {
-            sender.sendMessage(ChatColors.color("&3/te reapply <name> &b") + "Reapplies Daxi effects to <name>");
+            sender.sendMessage(ChatColors.color("&3/te reapply <name> &b") + "为 <name> 刷新超级药水效果");
         }
         if (sender.hasPermission("te.command.toggle")) {
-            sender.sendMessage(ChatColors.color("&3/te toggle <name> &b") + "Toggles Daxi effects refreshing for <name>");
+            sender.sendMessage(ChatColors.color("&3/te toggle <name> &b") + "为 <name> 开关超级药水刷新功能");
         }
     }
 

@@ -7,7 +7,7 @@ public final class TranscendenceLoreBuilder {
     private TranscendenceLoreBuilder() {}
 
     public static String unstable() {
-        return ChatColor.RED + "UNSTABLE - Use cargo if possible";
+        return ChatColor.RED + "不稳定 - 尽可能使用货运";
     }
 
 }
