@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.sfiguz7</groupId>
     <artifactId>TranscEndence</artifactId>
-    <version>35 zh-CN</version>
+    <version>zh_CN(LobbyTech)</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -35,7 +35,7 @@
     </repositories>
 
     <build>
-        <finalName>${project.name} v${project.version}</finalName>
+        <finalName>[Slimefun]${project.name}-${project.version}</finalName>
         <defaultGoal>clean package</defaultGoal>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
 
