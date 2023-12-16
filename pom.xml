@@ -35,7 +35,7 @@
     </repositories>
 
     <build>
-        <finalName>[Slimefun]${project.name}-${project.version}</finalName>
+        <finalName>[粘液科技]${project.name}-${project.version}</finalName>
         <defaultGoal>clean package</defaultGoal>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
 
