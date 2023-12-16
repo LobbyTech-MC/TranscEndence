@@ -49,8 +49,8 @@ public class TranscEndenceGuideListener implements Listener {
         pages.add(ChatColors.color("&a粒子过载机&r在里面放入未充能的粒子" +
             "用来给粒子充能.\n\n" +
             "粒子过载机方向相同的离子的比率是1:1如果它们的方向不同，比率则是16:1."));
-        pages.add(ChatColors.color("&a超能力核心&r是超能药水的目标:他会给你不同的" +
-            "药剂效果,持续到你死亡.\n" +
+        pages.add(ChatColors.color("&a超能药水会给你不同的" +
+            "药水效果,持续到你死亡.\n" +
             "效果列表图:\n" +
             "(S) - 力量 3\n" +
             "(A) - 伤害吸收 5\n" +
@@ -59,7 +59,7 @@ public class TranscEndenceGuideListener implements Listener {
             "(R) - 生命恢复 2\n"));
         pages.add(ChatColors.color("死亡的时候,所有的超能力效果将会消失." +
             "这意味着只能从头开始." +
-            "只能重新制作超能力核心."));
+            "只能重新制作超能药水."));
         meta.setPages(pages);
         book.setItemMeta(meta);
         return book;

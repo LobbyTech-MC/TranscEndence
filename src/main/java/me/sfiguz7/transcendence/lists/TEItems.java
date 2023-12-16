@@ -175,7 +175,7 @@ public final class TEItems {
     );
     public static final SlimefunItemStack DAXI_REGENERATION = new SlimefunItemStack("DAXI_REGENERATION",
         "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2ZmYzk3N2NjN2UxMGU1NjRhMDk2MzhhNTNiYmM0YzU0YzljOGRhYzc0NTBiYTNkZmEzYzkwOTlkOTRmNSJ9fX0=",
-        "&a超能力核心(生命恢复)",
+        "&a超能药水(生命恢复)",
         "&9右键获得药水效果(生命恢复2)",
         "&9按下F5显示粒子特效!"
     );
