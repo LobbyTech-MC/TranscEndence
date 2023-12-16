@@ -15,21 +15,23 @@ public final class TEItems {
 
     /* QoL info item */
     // Credits to @NCBPFluffy for the idea, people appreciate it so adding to this too
+	/*
     public static final SlimefunItemStack TE_INFO = new SlimefunItemStack("TE_INFO",
         Material.WRITTEN_BOOK,
-        "&5末地科技指南书",
+        "&5超能药水指南书",
         "",
         "&e" + TranscEndence.getInstance().getName() + " " + TranscEndence.getInstance().getPluginVersion(),
         "",
-        "&e/te guide &7获取末地科技指南书",
-        "&e/te walkthrough &7获取末地科技帮助链接"
+        "&e/te guide &7获取超能药水指南书",
+        "&e/te walkthrough &7获取超能药水帮助链接"
     );
+    */
 
 
     /* Category */
     public static final ItemGroup transcendence = new ItemGroup(new NamespacedKey(TranscEndence.getInstance(),
         "transcendence"),
-        new CustomItemStack(Material.PURPUR_BLOCK, "&5末地科技")
+        new CustomItemStack(Material.PURPUR_BLOCK, "&5超能药水")
     );
     /* Items */
     public static final SlimefunItemStack QUIRP_UP = new SlimefunItemStack("QUIRP_UP",
@@ -149,25 +151,25 @@ public final class TEItems {
     );
     public static final SlimefunItemStack DAXI_STRENGTH = new SlimefunItemStack("DAXI_STRENGTH",
         "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2ZmYzk3N2NjN2UxMGU1NjRhMDk2MzhhNTNiYmM0YzU0YzljOGRhYzc0NTBiYTNkZmEzYzkwOTlkOTRmNSJ9fX0=",
-        "&a超级药水(力量)",
+        "&a超能药水(力量)",
         "&9右键获得药水效果(力量3）",
         "&9按下F5显示粒子特效!"
     );
     public static final SlimefunItemStack DAXI_ABSORPTION = new SlimefunItemStack("DAXI_ABSORPTION",
         "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2ZmYzk3N2NjN2UxMGU1NjRhMDk2MzhhNTNiYmM0YzU0YzljOGRhYzc0NTBiYTNkZmEzYzkwOTlkOTRmNSJ9fX0=",
-        "&a超级药水(伤害吸收)",
+        "&a超能药水(伤害吸收)",
         "&9右键获得药水效果(伤害吸收5)",
         "&9按下F5显示粒子特效!"
     );
     public static final SlimefunItemStack DAXI_FORTITUDE = new SlimefunItemStack("DAXI_FORTITUDE",
         "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2ZmYzk3N2NjN2UxMGU1NjRhMDk2MzhhNTNiYmM0YzU0YzljOGRhYzc0NTBiYTNkZmEzYzkwOTlkOTRmNSJ9fX0=",
-        "&a超级药水(抗性提升)",
+        "&a超能药水(抗性提升)",
         "&9右键获得药水效果(抗性提升4)",
         "&9按下F5显示粒子特效!"
     );
     public static final SlimefunItemStack DAXI_SATURATION = new SlimefunItemStack("DAXI_SATURATION",
         "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2ZmYzk3N2NjN2UxMGU1NjRhMDk2MzhhNTNiYmM0YzU0YzljOGRhYzc0NTBiYTNkZmEzYzkwOTlkOTRmNSJ9fX0=",
-        "&a超级药水(饱和)",
+        "&a超能药水(饱和)",
         "&9右键获得药水效果(饱和)",
         "&9按下F5显示粒子特效!"
     );
@@ -191,8 +193,8 @@ public final class TEItems {
     );
     public static final SlimefunItemStack NANOBOT_CRAFTER = new SlimefunItemStack("NANOBOT_CRAFTER",
         Material.CHISELED_STONE_BRICKS,
-        "&c纳米工作台",
-        "末地科技合成台"
+        "&c纳米机器人工作台",
+        "可以合成超能药水"
     );
 
 

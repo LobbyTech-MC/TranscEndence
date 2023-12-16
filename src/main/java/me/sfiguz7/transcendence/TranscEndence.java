@@ -183,7 +183,7 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         }
 
         new Research(new NamespacedKey(this, "daxis"),
-            ++researchId, "超级药水", 30)
+            ++researchId, "超能药水", 30)
             .addItems(TEItems.DAXI_STRENGTH,
                 TEItems.DAXI_ABSORPTION,
                 TEItems.DAXI_FORTITUDE,
@@ -218,8 +218,10 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
             ++researchId, "粒子过载机", 35)
             .addItems(TEItems.ZOT_OVERLOADER).register();
 
+        /*
         new SlimefunItem(TEItems.transcendence, TEItems.TE_INFO, RecipeType.NULL, new ItemStack[0]
         ).register(this);
+        */
 
 
         // Initialise data if it exists
