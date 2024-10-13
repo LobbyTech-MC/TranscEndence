@@ -202,11 +202,11 @@ public class ZotOverloader extends SimpleSlimefunItem<BlockTicker> implements TE
 
     private ItemStack getZot(String zotSpin) {
         if (zotSpin.compareTo("上") == 0) {
-            return ZOT_UP_2;
+            return TEItems.ZOT_UP_2;
         } else if (zotSpin.compareTo("下") == 0) {
-            return ZOT_DOWN_2;
+            return TEItems.ZOT_DOWN_2;
         } else if (zotSpin.compareTo("左") == 0) {
-            return ZOT_LEFT_2;
+            return TEItems.ZOT_LEFT_2;
         }
         return TEItems.ZOT_RIGHT_2;
 
