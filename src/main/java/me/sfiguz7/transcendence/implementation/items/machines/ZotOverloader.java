@@ -30,19 +30,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Arrays;
 import java.util.List;
 
-import static me.sfiguz7.transcendence.lists.TEItems.QUIRP_DOWN;
-import static me.sfiguz7.transcendence.lists.TEItems.QUIRP_LEFT;
-import static me.sfiguz7.transcendence.lists.TEItems.QUIRP_RIGHT;
-import static me.sfiguz7.transcendence.lists.TEItems.QUIRP_UP;
-import static me.sfiguz7.transcendence.lists.TEItems.ZOT_DOWN;
-import static me.sfiguz7.transcendence.lists.TEItems.ZOT_DOWN_2;
-import static me.sfiguz7.transcendence.lists.TEItems.ZOT_LEFT;
-import static me.sfiguz7.transcendence.lists.TEItems.ZOT_LEFT_2;
-import static me.sfiguz7.transcendence.lists.TEItems.ZOT_RIGHT;
-import static me.sfiguz7.transcendence.lists.TEItems.ZOT_RIGHT_2;
-import static me.sfiguz7.transcendence.lists.TEItems.ZOT_UP;
-import static me.sfiguz7.transcendence.lists.TEItems.ZOT_UP_2;
-
 public class ZotOverloader extends SimpleSlimefunItem<BlockTicker> implements TEInventoryBlock, EnergyNetComponent {
 
     private static final int ENERGY_CONSUMPTION = 1024;
@@ -62,16 +49,16 @@ public class ZotOverloader extends SimpleSlimefunItem<BlockTicker> implements TE
         33, 34, 35,
     };
     private final ItemStack[] allowedSlotsItems = {
-        ZOT_UP,
-        ZOT_DOWN,
-        ZOT_LEFT,
-        ZOT_RIGHT
+        TEItems.ZOT_UP,
+        TEItems.ZOT_DOWN,
+        TEItems.ZOT_LEFT,
+        TEItems.ZOT_RIGHT
     };
     private final ItemStack[] allowedInputItems = {
-        QUIRP_UP,
-        QUIRP_DOWN,
-        QUIRP_LEFT,
-        QUIRP_RIGHT
+        TEItems.QUIRP_UP,
+        TEItems.QUIRP_DOWN,
+        TEItems.QUIRP_LEFT,
+        TEItems.QUIRP_RIGHT
     };
 
     public ZotOverloader() {
@@ -182,8 +169,8 @@ public class ZotOverloader extends SimpleSlimefunItem<BlockTicker> implements TE
                 if (zotCharge == requiredCharge) {
                     menu.replaceExistingItem(ZOT_SLOT, getZot(zotMeta.getDisplayName().split(" ")[1]));
                 } else {
-                    zotMeta.setLore(Arrays.asList(ChatColor.BLUE + "Concentrated matter",
-                        ChatColor.GRAY + "Charge: " + ChatColor.YELLOW + zotCharge + "/" + requiredCharge));
+                    zotMeta.setLore(Arrays.asList(ChatColor.BLUE + "浓缩物质",
+                        ChatColor.GRAY + "充能: " + ChatColor.YELLOW + zotCharge + "/" + requiredCharge));
                 }
 
                 PersistentDataAPI.setInt(zotMeta, chargeKey, zotCharge);
@@ -221,7 +208,7 @@ public class ZotOverloader extends SimpleSlimefunItem<BlockTicker> implements TE
         } else if (zotSpin.compareTo("左") == 0) {
             return ZOT_LEFT_2;
         }
-        return ZOT_RIGHT_2;
+        return TEItems.ZOT_RIGHT_2;
 
     }
 

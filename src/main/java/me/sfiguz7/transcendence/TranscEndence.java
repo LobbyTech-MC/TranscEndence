@@ -4,7 +4,6 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.researches.Research;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import me.sfiguz7.transcendence.implementation.core.attributes.TERegistry;
 import me.sfiguz7.transcendence.implementation.core.commands.TranscEndenceCommand;
@@ -32,6 +31,7 @@ import me.sfiguz7.transcendence.implementation.tasks.RecurrentRefreshTask;
 import me.sfiguz7.transcendence.implementation.tasks.StableTask;
 import me.sfiguz7.transcendence.implementation.utils.SaveUtils;
 import me.sfiguz7.transcendence.lists.TEItems;
+import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
@@ -52,6 +52,12 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onEnable() {
+        if (!getServer().getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
+            getLogger().log(Level.SEVERE, "本插件需要 鬼斩前置库插件(GuizhanLibPlugin) 才能运行!");
+            getLogger().log(Level.SEVERE, "从此处下载: https://50l.cc/gzlib");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
 
         instance = this;
 
@@ -61,8 +67,8 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
 
         Config cfg = new Config(this);
 
-        if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-            new GitHubBuildsUpdater(this, getFile(), "Sfiguz7/TranscEndence/master").start();
+        if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Build")) {
+            GuizhanUpdater.start(this, getFile(), "SlimefunGuguProject", "TranscEndence", "master");
         }
 
         int bStatsId = 7329;
@@ -100,8 +106,8 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         zotRequiredCharge = getConfig().getInt("options.zot-required-charge");
         highchance = getConfig().getInt("options.polarizer-affinity-chance");
         if (highchance < 26 || highchance > 50) {
-            getLogger().log(Level.SEVERE, "Invalid config option: options.polarizer-affinity-chance");
-            getLogger().log(Level.SEVERE, "Chance must be > 25 and < 51");
+            getLogger().log(Level.SEVERE, "无效的配置: options.polarizer-affinity-chance");
+            getLogger().log(Level.SEVERE, "有效范围: 26 - 50");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
@@ -119,7 +125,7 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         }
 
         new Research(new NamespacedKey(this, "unstable"),
-            ++researchId, "不稳定材料", 23)
+            ++researchId, "不稳定的材料", 23)
             .addItems(TEItems.UNSTABLE_INGOT,
                 TEItems.UNSTABLE_INGOT_2,
                 TEItems.UNSTABLE_INGOT_3,
@@ -134,7 +140,7 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         }
 
         new Research(new NamespacedKey(this, "stable"),
-            ++researchId, "稳定材料", 30)
+            ++researchId, "稳定的材料", 30)
             .addItems(TEItems.STABLE_INGOT,
                 TEItems.STABLE_BLOCK).register();
         /* More items moved below for aesthetic purposes */
@@ -150,13 +156,13 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         new NanobotCrafter().register(this);
 
         new Research(new NamespacedKey(this, "nanobot_crafter"),
-            ++researchId, "粒子冷凝机", 15)
+            ++researchId, "纳米工作台", 15)
             .addItems(TEItems.NANOBOT_CRAFTER).register();
 
         new QuirpOscillator().register(this);
 
         new Research(new NamespacedKey(this, "quirp_oscillator"),
-            ++researchId, "粒子转向机", 37)
+            ++researchId, "粒子生产机", 37)
             .addItems(TEItems.QUIRP_OSCILLATOR,
                 TEItems.QUIRP_UP,
                 TEItems.QUIRP_DOWN,
@@ -197,7 +203,7 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         }
 
         new Research(new NamespacedKey(this, "polarizers"),
-            ++researchId, "偏光镜", 23)
+            ++researchId, "偏振器", 23)
             .addItems(TEItems.VERTICAL_POLARIZER,
                 TEItems.HORIZONTAL_POLARIZER).register();
 
@@ -239,7 +245,7 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return "https://github.com/Sfiguz7/TranscEndence/issues";
+        return "https://github.com/SlimefunGuguProject/TranscEndence/issues";
     }
 
     @Override

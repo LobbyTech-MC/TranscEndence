@@ -51,7 +51,7 @@ public class TranscEndenceCommand implements CommandExecutor {
                         Set<Daxi.Type> effects =
                             TranscEndence.getRegistry().getDaxiEffectPlayers().get(p.getUniqueId());
                         if (effects != null) {
-                            StringBuilder message = new StringBuilder("刷新超能药水: ");
+                            StringBuilder message = new StringBuilder("已刷新超能药水: ");
                             for (Daxi.Type t : effects) {
                                 message.append(" ").append(t);
                             }

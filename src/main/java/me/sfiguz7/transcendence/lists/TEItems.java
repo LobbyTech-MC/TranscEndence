@@ -69,7 +69,7 @@ public final class TEItems {
     );
     public static final SlimefunItemStack UNSTABLE_INGOT_2 = new SlimefunItemStack("UNSTABLEINGOT2",
         Material.NETHER_BRICK,
-        "&4不稳定的锭(75%)",
+        "&4不稳定的锭 (75%)",
         "&9你将会死亡",
         "&9超过时间,物品将会消失.....",
         "",
@@ -77,7 +77,7 @@ public final class TEItems {
     );
     public static final SlimefunItemStack UNSTABLE_INGOT_3 = new SlimefunItemStack("UNSTABLEINGOT3",
         Material.NETHER_BRICK,
-        "&4不稳定的锭(50%)",
+        "&4不稳定的锭 (50%)",
         "&9你将会死亡",
         "&9超过时间,物品将会消失.....",
         "",
@@ -85,7 +85,7 @@ public final class TEItems {
     );
     public static final SlimefunItemStack UNSTABLE_INGOT_4 = new SlimefunItemStack("UNSTABLEINGOT4",
         Material.NETHER_BRICK,
-        "&4不稳定的锭(25%)",
+        "&4不稳定的锭 (25%)",
         "&9你将会死亡",
         "&9超过时间,物品将会消失.....",
         "",
@@ -181,13 +181,13 @@ public final class TEItems {
     );
     public static final SlimefunItemStack VERTICAL_POLARIZER = new SlimefunItemStack("VERTICAL_POLARIZER",
         Material.END_ROD,
-        "&5垂直偏光镜",
-        "&9增加垂直粒子的产出记录",
+        "&5垂直偏振器",
+        "&9增加垂直粒子的产出几率",
         "&c需要放入粒子生产机"
     );
     public static final SlimefunItemStack HORIZONTAL_POLARIZER = new SlimefunItemStack("HORIZONTAL_POLARIZER",
         Material.END_ROD,
-        "&5水平偏光镜",
+        "&5水平偏振器",
         "&9增加水平粒子产出几率",
         "&c需要放入粒子生产机"
     );
@@ -197,12 +197,11 @@ public final class TEItems {
         "可以合成超能药水"
     );
 
-
     /* Machines */
     public static final SlimefunItemStack QUIRP_OSCILLATOR = new SlimefunItemStack("QUIRP_OSCILLATOR",
         Material.PURPUR_PILLAR,
         "&9粒子生产机",
-        "&9来自虚空",
+        "&7来自虚空",
         "&c需要在末地运行!",
         "",
         LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE),
@@ -212,7 +211,7 @@ public final class TEItems {
     public static final SlimefunItemStack QUIRP_ANNIHILATOR = new SlimefunItemStack("QUIRP_ANNIHILATOR",
         Material.YELLOW_CONCRETE,
         "&c粒子冷凝机",
-        "&9需要相对的粒子才能运行",
+        "&7需要两种方向相反的粒子才能运行",
         "",
         LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE),
         LoreBuilder.powerBuffer(1024),
@@ -221,7 +220,7 @@ public final class TEItems {
     public static final SlimefunItemStack QUIRP_CYCLER = new SlimefunItemStack("QUIRP_CYCLER",
         Material.BLUE_CONCRETE,
         "&c粒子转向机",
-        "&9变成不同的粒子",
+        "&7使粒子转向(顺时针)",
         "",
         LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE),
         LoreBuilder.powerBuffer(1024),
@@ -239,7 +238,7 @@ public final class TEItems {
     public static final SlimefunItemStack QUIRP_SCATTERER = new SlimefunItemStack("QUIRP_SCATTERER",
         "9343ce58da54c79924a2c9331cfc417fe8ccbbea9be45a7ac85860a6c730",
         "&c粒子发电机",
-        "&9精良的发电机",
+        "&7最好的发电机",
         "",
         LoreBuilder.machine(MachineTier.END_GAME, MachineType.GENERATOR),
         LoreBuilder.powerBuffer(65536),
@@ -248,7 +247,7 @@ public final class TEItems {
     public static final SlimefunItemStack ZOT_OVERLOADER = new SlimefunItemStack("ZOT_OVERLOADER",
         Material.WHITE_CONCRETE,
         "&9粒子过载机",
-        "&9用于粒子充能",
+        "&7用于粒子充能",
         "&c需要在末地运行!",
         "",
         LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),

@@ -58,8 +58,8 @@ public class TranscEndenceGuideListener implements Listener {
             "(H) - 饱和\n" +
             "(R) - 生命恢复 2\n"));
         pages.add(ChatColors.color("死亡的时候,所有的超能力效果将会消失." +
-            "这意味着只能从头开始." +
-            "只能重新制作超能药水."));
+            "这意味着你只能重新" +
+            "开始制作超能药水."));
         meta.setPages(pages);
         book.setItemMeta(meta);
         return book;
