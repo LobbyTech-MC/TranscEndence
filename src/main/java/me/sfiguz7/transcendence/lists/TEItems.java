@@ -193,7 +193,7 @@ public final class TEItems {
     );
     public static final SlimefunItemStack NANOBOT_CRAFTER = new SlimefunItemStack("NANOBOT_CRAFTER",
         Material.CHISELED_STONE_BRICKS,
-        "&c纳米机器人工作台",
+        "&c超能纳米工作台",
         "可以合成超能药水"
     );
 

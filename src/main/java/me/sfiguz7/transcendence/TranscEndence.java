@@ -156,7 +156,7 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         new NanobotCrafter().register(this);
 
         new Research(new NamespacedKey(this, "nanobot_crafter"),
-            ++researchId, "纳米工作台", 15)
+            ++researchId, "超能纳米工作台", 15)
             .addItems(TEItems.NANOBOT_CRAFTER).register();
 
         new QuirpOscillator().register(this);
@@ -215,7 +215,7 @@ public class TranscEndence extends JavaPlugin implements SlimefunAddon {
         new Stabilizer().register(this);
 
         new Research(new NamespacedKey(this, "quirp_annihilator"),
-            ++researchId, "粒子生产机", 40)
+            ++researchId, "粒子冷凝机", 40)
             .addItems(TEItems.QUIRP_ANNIHILATOR,
                 TEItems.QUIRP_CYCLER,
                 TEItems.STABILIZER).register();
